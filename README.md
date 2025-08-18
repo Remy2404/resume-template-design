@@ -1,7 +1,7 @@
 # Resume Template Design
 
 A modern, responsive resume template built with Next.js, React, and Tailwind CSS. This project showcases a professional resume layout with clean typography, interactive elements, and a mobile-first design approach.
-
+![alt text](public/preview.png)
 [![Next.js](https://img.shields.io/badge/Next.js-15.2.4-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
