@@ -1,14 +1,19 @@
+'use client'
+
 import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Award, TrendingUp, Users, Zap } from "lucide-react"
+import { Mail, Phone, MapPin, Github, Linkedin, ExternalLink, Award, TrendingUp, Users, Zap, Download, Star, Calendar, Globe } from "lucide-react"
 import Image from "next/image"
+import AboutMeSection from "@/components/AboutMe"
+import { Button } from "@/components/ui/button"
 
 export default function Resume() {
   return (
-    <div className="min-h-screen bg-white py-8 px-4">
-      <div className="max-w-4xl mx-auto space-y-8">
-        <div className="text-center border-b-2 border-gray-200 pb-6">
+    <div className="min-h-screen bg-white py-8 px-4 print:bg-white print:py-0">
+      <div className="max-w-4xl mx-auto space-y-6 print:space-y-4">
+        {/* Header Section */}
+        <div className="text-center border-b-2 border-gray-300 pb-6">
           <div className="flex justify-center mb-6">
-            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-blue-600 shadow-lg">
+            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-gray-400">
               <Image
                 src="/cover.png"
                 alt="Phon Ramy Profile"
@@ -18,9 +23,12 @@ export default function Resume() {
               />
             </div>
           </div>
-          <h1 className="font-serif font-black text-4xl md:text-5xl text-gray-900 mb-2">PHON RAMY</h1>
-          <p className="font-serif font-semibold text-xl text-blue-600 mb-4">FULL-STACK DEVELOPER</p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+          <h1 className="font-serif font-black text-3xl md:text-4xl text-gray-900 mb-2">
+            PHON RAMY
+          </h1>
+          <p className="font-serif font-semibold text-lg text-gray-700 mb-4">FULL-STACK DEVELOPER</p>
+
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-4">
             <div className="flex items-center gap-1">
               <MapPin className="w-4 h-4" />
               Phnom Penh, Cambodia
@@ -34,82 +42,92 @@ export default function Resume() {
               rosexmee1122@gmail.com
             </div>
           </div>
-          <div className="flex justify-center gap-4 mt-4">
+
+          <div className="flex justify-center gap-6 text-sm">
             <a
               href="https://github.com/Remy2404"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-blue-600 hover:text-red-500 transition-colors cursor-pointer"
+              className="text-gray-600 hover:text-gray-900 underline"
             >
-              <Github className="w-4 h-4" />
-              <span className="text-sm">GitHub</span>
+              GitHub
             </a>
             <a
               href="https://www.linkedin.com/in/phon-ramy-81025a2a9/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-blue-600 hover:text-red-500 transition-colors cursor-pointer"
+              className="text-gray-600 hover:text-gray-900 underline"
             >
-              <Linkedin className="w-4 h-4" />
-              <span className="text-sm">LinkedIn</span>
+              LinkedIn
             </a>
             <a
               href="https://phon-ramy-five.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-blue-600 hover:text-red-500 transition-colors cursor-pointer"
+              className="text-gray-600 hover:text-gray-900 underline"
             >
-              <ExternalLink className="w-4 h-4" />
-              <span className="text-sm">Portfolio</span>
+              Portfolio
             </a>
           </div>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="font-serif font-bold text-2xl text-gray-900 border-b border-gray-300 pb-2">
-            PROFESSIONAL SUMMARY
-          </h2>
-          <div className="flex items-start gap-3">
-            <Award className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
-            <p className="text-gray-700 leading-relaxed">
-              Accomplished final-year IT Engineering student with 3+ years of hands-on experience in full-stack
-              development and AI integration. Successfully architected and deployed 10+ web and mobile applications,
-              serving over 3,000 active users. Demonstrated expertise in integrating 50+ AI models to enhance
-              application intelligence and user experience. Seeking an internship opportunity to contribute to
-              innovative projects while expanding technical expertise in a collaborative environment.
-            </p>
-          </div>
-        </div>
+        <AboutMeSection />
 
-        <div className="space-y-4">
-          <h2 className="font-serif font-bold text-2xl text-gray-900 border-b border-gray-300 pb-2">
-            TECHNICAL SKILLS
+        {/* Skills Section */}
+        <div className="border-b border-gray-300 pb-6">
+          <h2 className="font-serif font-bold text-2xl text-gray-900 mb-4 uppercase tracking-wide">
+            Technical Skills
           </h2>
 
           <div className="space-y-6">
             <div>
-              <h3 className="font-semibold text-blue-600 mb-3 flex items-center gap-2">
-                <Zap className="w-4 h-4" />
-                Expert Level
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <h3 className="font-semibold text-gray-800 mb-4">Expert Level</h3>
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <p className="text-sm font-medium text-gray-600 mb-2">Languages & Frontend</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["TypeScript/JavaScript", "React.js", "Next.js", "Python"].map((skill) => (
-                      <Badge key={skill} className="bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200">
-                        {skill}
-                      </Badge>
+                  <p className="text-sm font-medium text-gray-600 mb-3">Languages & Frontend</p>
+                  <div className="space-y-3">
+                    {[
+                      { skill: "TypeScript/JavaScript", level: 95 },
+                      { skill: "React.js", level: 90 },
+                      { skill: "Next.js", level: 88 },
+                      { skill: "Python", level: 85 }
+                    ].map(({ skill, level }) => (
+                      <div key={skill} className="space-y-1">
+                        <div className="flex justify-between text-sm">
+                          <span className="font-medium">{skill}</span>
+                          <span className="text-gray-500">{level}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 h-2">
+                          <div
+                            className="bg-gray-600 h-2"
+                            style={{ width: `${level}%` }}
+                          ></div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-600 mb-2">AI/ML & Backend</p>
-                  <div className="flex flex-wrap gap-2">
-                    {["OpenAI API", "Google Gemini", "Node.js", "Express.js"].map((skill) => (
-                      <Badge key={skill} className="bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200">
-                        {skill}
-                      </Badge>
+                  <p className="text-sm font-medium text-gray-600 mb-3">AI/ML & Backend</p>
+                  <div className="space-y-3">
+                    {[
+                      { skill: "OpenAI API", level: 92 },
+                      { skill: "Google Gemini", level: 90 },
+                      { skill: "Node.js", level: 88 },
+                      { skill: "Express.js", level: 85 }
+                    ].map(({ skill, level }) => (
+                      <div key={skill} className="space-y-1">
+                        <div className="flex justify-between text-sm">
+                          <span className="font-medium">{skill}</span>
+                          <span className="text-gray-500">{level}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 h-2">
+                          <div
+                            className="bg-gray-600 h-2"
+                            style={{ width: `${level}%` }}
+                          ></div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -117,15 +135,15 @@ export default function Resume() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-green-600 mb-3">Proficient</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">Proficient</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-sm font-medium text-gray-600 mb-2">Databases & Mobile</p>
                   <div className="flex flex-wrap gap-2">
                     {["MongoDB", "PostgreSQL", "React Native", "Firebase"].map((skill) => (
-                      <Badge key={skill} className="bg-green-100 text-green-800 border-green-200 hover:bg-green-200">
+                      <span key={skill} className="text-sm text-gray-700">
                         {skill}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -133,9 +151,9 @@ export default function Resume() {
                   <p className="text-sm font-medium text-gray-600 mb-2">DevOps & Cloud</p>
                   <div className="flex flex-wrap gap-2">
                     {["Docker", "AWS", "Vercel", "GitHub Actions"].map((skill) => (
-                      <Badge key={skill} className="bg-green-100 text-green-800 border-green-200 hover:bg-green-200">
+                      <span key={skill} className="text-sm text-gray-700">
                         {skill}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -143,153 +161,197 @@ export default function Resume() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-orange-600 mb-3">Familiar</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">Familiar</h3>
               <div className="flex flex-wrap gap-2">
                 {["C++", "Java", "MySQL", "Supabase", "Android (Java/Kotlin)", "LangChain", "Heroku"].map((skill) => (
-                  <Badge key={skill} className="bg-orange-100 text-orange-800 border-orange-200 hover:bg-orange-200">
+                  <span key={skill} className="text-sm text-gray-700">
                     {skill}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="font-serif font-bold text-2xl text-gray-900 border-b border-gray-300 pb-2">
-            PROJECT EXPERIENCE
+        {/* Projects Section */}
+        <div className="border-b border-gray-300 pb-6">
+          <h2 className="font-serif font-bold text-2xl text-gray-900 mb-4 uppercase tracking-wide">
+            Project Experience
           </h2>
           <div className="space-y-6">
-            {/* Gemini AI Web Chatbot */}
-            <div className="border-l-4 border-blue-600 pl-6 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            {/* Polymind AI Telegram Bot */}
+            <div className="pl-6 relative">
+              <div className="absolute -left-2 top-4 w-4 h-4 bg-gray-600 rounded-full"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <h3 className="font-semibold text-lg text-gray-900">Polymind - Multi-Modal AI Telegram Bot</h3>
                 <span className="text-sm text-gray-500 font-medium">2023 - Present</span>
               </div>
-              <div className="flex items-center gap-4 mb-3">
-                <div className="flex items-center gap-1 text-green-600">
-                  <Users className="w-4 h-4" />
-                  <span className="text-sm font-medium">3,000+ Active Users</span>
-                </div>
-                <div className="flex items-center gap-1 text-blue-600">
-                  <TrendingUp className="w-4 h-4" />
-                  <span className="text-sm font-medium">99.9% Uptime</span>
-                </div>
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-sm font-medium text-gray-700">3,000+ Active Users</span>
+                <span className="text-sm font-medium text-gray-700">99.9% Uptime</span>
               </div>
-              <ul className="text-gray-700 space-y-1 mb-3">
-                <li>• Architected advanced AI assistant integrating 50+ models (Gemini, DeepSeek, OpenRouter)</li>
-                <li>• Engineered multi-model routing system achieving sub-second response times</li>
-                <li>• Implemented robust context management reducing memory usage by 35%</li>
-                <li>• Deployed scalable infrastructure supporting 3,000+ concurrent users</li>
+              <ul className="text-gray-700 space-y-2 mb-4">
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Architected advanced AI assistant integrating 50+ models (Gemini, DeepSeek, OpenRouter)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Engineered multi-model routing system achieving sub-second response times</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Implemented robust context management reducing memory usage by 35%</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Deployed scalable infrastructure supporting 3,000+ concurrent users</span>
+                </li>
               </ul>
               <div className="flex flex-wrap gap-2">
                 {["Python", "Telegram Bot API", "Docker", "Heroku", "Whisper", "FFmpeg"].map((tech) => (
-                  <Badge key={tech} variant="outline" className="text-xs border-gray-300">
+                  <span key={tech} className="text-xs text-gray-600">
                     {tech}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
+
             {/* Coffee Corner Mobile App */}
-            <div className="border-l-4 border-blue-600 pl-6 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            <div className="pl-6 relative">
+              <div className="absolute -left-2 top-4 w-4 h-4 bg-gray-600 rounded-full"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <h3 className="font-semibold text-lg text-gray-900">
                   Coffee Corner Mobile App | React Native Developer
                 </h3>
                 <span className="text-sm text-gray-500 font-medium">2023 - Present</span>
               </div>
-              <ul className="text-gray-700 space-y-1 mb-3">
-                <li>• Developed cross-platform mobile application for local coffee shop operations</li>
-                <li>• Implemented order tracking system reducing customer wait times by 25%</li>
-                <li>• Designed points-based loyalty system increasing customer retention by 45%</li>
-                <li>• Integrated push notifications improving order completion rates by 30%</li>
+              <ul className="text-gray-700 space-y-2 mb-4">
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Developed cross-platform mobile application for local coffee shop operations</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Implemented order tracking system reducing customer wait times by 25%</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Designed points-based loyalty system increasing customer retention by 45%</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Integrated push notifications improving order completion rates by 30%</span>
+                </li>
               </ul>
               <div className="flex flex-wrap gap-2">
                 {["React Native", "MongoDB", "TypeScript", "Expo Go"].map((tech) => (
-                  <Badge key={tech} variant="outline" className="text-xs border-gray-300">
+                  <span key={tech} className="text-xs text-gray-600">
                     {tech}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
+
             {/* Gemini AI Web Chatbot */}
-            <div className="border-l-4 border-blue-600 pl-6 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+            <div className="pl-6 relative">
+              <div className="absolute -left-2 top-4 w-4 h-4 bg-gray-600 rounded-full"></div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                 <h3 className="font-semibold text-lg text-gray-900">Gemini AI Web Chatbot | Full-Stack Developer</h3>
                 <span className="text-sm text-gray-500 font-medium">2022 - Present</span>
               </div>
-              <ul className="text-gray-700 space-y-1 mb-3">
-                <li>• Developed modern web-based AI chatbot with responsive React interface</li>
-                <li>• Implemented Node.js backend with Google AI integration and session management</li>
-                <li>• Optimized real-time messaging performance, reducing latency by 40%</li>
-                <li>• Built context-aware conversation system improving user engagement by 60%</li>
+              <ul className="text-gray-700 space-y-2 mb-4">
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Developed modern web-based AI chatbot with responsive React interface</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Implemented Node.js backend with Google AI integration and session management</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Optimized real-time messaging performance, reducing latency by 40%</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                  <span>Built context-aware conversation system improving user engagement by 60%</span>
+                </li>
               </ul>
               <div className="flex flex-wrap gap-2">
                 {["React", "Node.js", "TypeScript", "Google AI Platform"].map((tech) => (
-                  <Badge key={tech} variant="outline" className="text-xs border-gray-300">
+                  <span key={tech} className="text-xs text-gray-600">
                     {tech}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="font-serif font-bold text-2xl text-gray-900 border-b border-gray-300 pb-2">
-            PROFESSIONAL EXPERIENCE
-          </h2>
-          <div className="border-l-4 border-blue-600 pl-6 relative">
-            <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
+        {/* Professional Experience Section */}
+        <div className="border-b border-gray-300 pb-6">
+          <h2 className="font-serif font-bold text-2xl text-gray-900 mb-4 uppercase tracking-wide">Professional Experience</h2>
+          <div className="pl-6 relative">
+            <div className="absolute -left-2 top-4 w-4 h-4 bg-gray-600 rounded-full"></div>
             <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
               <h3 className="font-semibold text-lg text-gray-900">Open-Source Contributor</h3>
               <span className="text-sm text-gray-500 font-medium">2023 - Present</span>
             </div>
-            <p className="text-blue-600 font-medium mb-2">KhmerCoder Community</p>
-            <ul className="text-gray-700 space-y-1">
-              <li>• Collaborated with 500+ developers in Cambodia's largest developer community</li>
-              <li>• Contributed to 15+ open-source projects using modern technology stacks</li>
-              <li>• Mentored junior developers in full-stack development best practices</li>
-              <li>• Maintained web applications serving 1,000+ community members</li>
+            <p className="text-gray-800 font-medium mb-3">KhmerCoder Community</p>
+            <ul className="text-gray-700 space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Collaborated with 500+ developers in Cambodia's largest developer community</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Contributed to 15+ open-source projects using modern technology stacks</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Mentored junior developers in full-stack development best practices</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 flex-shrink-0"></span>
+                <span>Maintained web applications serving 1,000+ community members</span>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="font-serif font-bold text-2xl text-gray-900 border-b border-gray-300 pb-2">EDUCATION</h2>
+        {/* Education Section */}
+        <div className="border-b border-gray-300 pb-6">
+          <h2 className="font-serif font-bold text-2xl text-gray-900 mb-4 uppercase tracking-wide">Education</h2>
           <div className="space-y-4">
-            <div className="border-l-4 border-blue-600 pl-6 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
+            <div className="pl-6 relative">
+              <div className="absolute -left-2 top-4 w-4 h-4 bg-gray-600 rounded-full"></div>
               <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
                 <h3 className="font-semibold text-lg text-gray-900">Bachelor of IT Engineering</h3>
-                <span className="text-sm text-gray-500 font-medium">Expected Graduation: 2026</span>
               </div>
-              <p className="text-blue-600 font-medium mb-2">Royal University of Phnom Penh | Phnom Penh, Cambodia</p>
+              <p className="text-gray-800 font-medium mb-2">Royal University of Phnom Penh | Phnom Penh, Cambodia</p>
               <p className="text-gray-700 text-sm">
                 <strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Systems, Software
                 Engineering, Object-Oriented Programming
               </p>
             </div>
 
-            <div className="border-l-4 border-gray-400 pl-6 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-400 rounded-full"></div>
+            <div className="pl-6 relative">
+              <div className="absolute -left-2 top-4 w-4 h-4 bg-gray-600 rounded-full"></div>
               <h3 className="font-semibold text-lg text-gray-900">High School Diploma</h3>
-              <p className="text-blue-600 font-medium">Chea Sim Samaki High School | Phnom Penh, Cambodia</p>
+              <p className="text-gray-800 font-medium">Chea Sim Samaki High School | Phnom Penh, Cambodia</p>
             </div>
           </div>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="font-serif font-bold text-2xl text-gray-900 border-b border-gray-300 pb-2">
-            ADDITIONAL INFORMATION
+        {/* Additional Information Section */}
+        <div className="border-b border-gray-300 pb-6">
+          <h2 className="font-serif font-bold text-2xl text-gray-900 mb-4 uppercase tracking-wide">
+            Additional Information
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
-              <h3 className="font-semibold text-blue-600 mb-2">Languages</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">Languages</h3>
               <ul className="text-gray-700 space-y-1">
                 <li>• English (Fluent)</li>
                 <li>• Khmer (Native)</li>
@@ -297,7 +359,7 @@ export default function Resume() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-blue-600 mb-2">Community Involvement</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">Community Involvement</h3>
               <p className="text-gray-700 text-sm">
                 Active member and contributor to KhmerCoder, Cambodia's largest developer community with 10,000+
                 members.
@@ -305,7 +367,7 @@ export default function Resume() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-blue-600 mb-2">Interests & Certifications</h3>
+              <h3 className="font-semibold text-gray-800 mb-2">Interests & Certifications</h3>
               <ul className="text-gray-700 text-sm space-y-1">
                 <li>• AI/ML Technology Research</li>
                 <li>• Open-Source Contributions</li>
@@ -313,6 +375,44 @@ export default function Resume() {
                 <li>• Tech Community Leadership</li>
               </ul>
             </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="text-center pt-6 no-print">
+          <p className="text-gray-600 mb-4">
+            I'm always excited to collaborate on challenging projects involving AI/ML, full-stack development, or innovative mobile solutions.
+          </p>
+          <div className="flex justify-center gap-4 mb-4">
+            <a
+              href="mailto:rosexmee1122@gmail.com"
+              className="text-gray-600 hover:text-gray-900 underline"
+            >
+              Get In Touch
+            </a>
+            <button
+              className="text-gray-600 hover:text-gray-900 underline"
+              onClick={() => {
+                // Add print-specific styles before printing
+                const style = document.createElement('style');
+                style.textContent = `
+                  @media print {
+                    body { background: white !important; }
+                    .no-print { display: none !important; }
+                    * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
+                  }
+                `;
+                document.head.appendChild(style);
+                window.print();
+                // Clean up after printing
+                setTimeout(() => document.head.removeChild(style), 1000);
+              }}
+            >
+              Print Resume
+            </button>
+          </div>
+          <div className="text-sm text-gray-500">
+            © 2025 Phon Ramy • Built with Next.js & Tailwind CSS
           </div>
         </div>
       </div>
