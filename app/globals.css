@@ -165,10 +165,18 @@
   }
 }
 
-/* Added print styles for professional document printing */
+/* Enhanced print styles for professional document printing */
 @media print {
+  @page {
+    margin: 0.5in;
+    size: A4;
+  }
+  
   body {
-    @apply text-black bg-white;
+    color: black !important;
+    background-color: white !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
   }
 
   .no-print {
@@ -176,24 +184,69 @@
   }
 
   .print-break {
-    page-break-before: always;
+    page-break-before: always !important;
+  }
+
+  .print\:break-before-page {
+    page-break-before: always !important;
   }
 
   .print-avoid-break {
-    page-break-inside: avoid;
+    page-break-inside: avoid !important;
   }
 
-  h1,
-  h2,
-  h3 {
-    @apply text-black;
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
   }
 
   .timeline-dot {
-    @apply bg-black;
+    background-color: black !important;
   }
 
   .project-timeline {
-    @apply border-l-black;
+    border-left-color: black !important;
+  }
+
+  /* Ensure gradient backgrounds print as solid colors */
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  .bg-gradient-to-l {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  /* Ensure all text is black for printing */
+  * {
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Special handling for header gradient */
+  .bg-gradient-to-r.from-slate-900 {
+    background: #1e293b !important;
+    color: white !important;
+  }
+
+  .bg-gradient-to-r.from-slate-900 * {
+    color: white !important;
+  }
+
+  /* Shadows should be minimal for print */
+  .shadow-2xl,
+  .shadow-xl,
+  .shadow-lg,
+  .shadow-md {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  /* Ensure proper spacing for print */
+  .p-8 {
+    padding: 1rem !important;
+  }
+
+  .p-6 {
+    padding: 0.75rem !important;
   }
 }
