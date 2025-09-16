@@ -25,15 +25,15 @@ export const metadata: Metadata = {
   title: "Professional Resume - Phon Ramy",
   description: "Full-Stack Developer Resume with Modern Design",
   icons: {
-    icon: "/Icon.png",
-    shortcut: "/Icon.png",
-    apple: "/Icon.png",
+    icon: "/Icon.png?v=1",
+    shortcut: "/Icon.png?v=1",
+    apple: "/Icon.png?v=1",
   },
   openGraph: {
     title: "Phon Ramy - Full-Stack Developer",
     description:
       "Professional resume showcasing full-stack development expertise",
-    images: ["/Icon.png"],
+    images: ["/Icon.png?v=1"],
   },
 };
 
