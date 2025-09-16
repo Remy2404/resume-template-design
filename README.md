@@ -48,12 +48,14 @@ A modern, responsive resume template built with Next.js, React, and Tailwind CSS
 ## 🛠️ Installation & Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/remy2404/resume-template-design.git
    cd resume-template-design
    ```
 
 2. **Install dependencies**
+
    ```bash
    pnpm install
    # or
@@ -63,6 +65,7 @@ A modern, responsive resume template built with Next.js, React, and Tailwind CSS
    ```
 
 3. **Run the development server**
+
    ```bash
    pnpm dev
    # or
@@ -77,19 +80,24 @@ A modern, responsive resume template built with Next.js, React, and Tailwind CSS
 ## 🎨 Customization
 
 ### Personal Information
+
 Edit the personal details in `app/page.tsx`:
+
 - Name and title
 - Contact information
 - Social media links
 - Professional summary
 
 ### Styling
+
 - **Colors**: Modify the color scheme in `tailwind.config.js`
 - **Typography**: Update font families and sizes in the CSS files
 - **Layout**: Adjust spacing and layout in the component files
 
 ### Content Sections
+
 The resume includes the following customizable sections:
+
 - Professional Summary
 - Technical Skills (Expert, Proficient, Familiar levels)
 - Project Experience
@@ -100,6 +108,7 @@ The resume includes the following customizable sections:
 ## 📱 Responsive Design
 
 The template is fully responsive and optimized for:
+
 - **Desktop**: Full-width layout with multi-column sections
 - **Tablet**: Adapted layout with appropriate spacing
 - **Mobile**: Single-column layout with touch-friendly elements
@@ -107,11 +116,13 @@ The template is fully responsive and optimized for:
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
+
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Deploy automatically with every push
 
 ### Other Platforms
+
 ```bash
 # Build for production
 pnpm build
@@ -137,6 +148,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Support
 
 If you have any questions or need help customizing the template, feel free to:
+
 - Open an issue on GitHub
 - Reach out via email: rosexmee1122@gmail.com
 - Connect on [LinkedIn](https://www.linkedin.com/in/phon-ramy-81025a2a9/)

@@ -40,7 +40,9 @@
   --sidebar-ring: oklch(0.45 0.18 220 / 0.3);
   --font-sans: var(--font-open-sans);
   --font-serif: var(--font-montserrat);
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 .dark {
@@ -117,7 +119,9 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: var(--font-open-sans);
   --font-serif: var(--font-montserrat);
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 @layer base {
@@ -171,7 +175,7 @@
     margin: 0.5in;
     size: A4;
   }
-  
+
   body {
     color: black !important;
     background-color: white !important;
@@ -195,7 +199,12 @@
     page-break-inside: avoid !important;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: black !important;
   }
 

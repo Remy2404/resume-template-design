@@ -1,4 +1,4 @@
-import { Code } from "lucide-react"
+import { Code } from "lucide-react";
 
 const AboutMeSection = () => {
   return (
@@ -17,10 +17,15 @@ const AboutMeSection = () => {
           </div>
           <div className="flex-1">
             <p className="text-gray-700 leading-relaxed text-lg">
-              Full-Stack Developer with experience building AI-powered web and mobile applications. Skilled in React/Next.js, Node.js, Python, and React Native, with a focus on creating fast, scalable, and user-friendly solutions.
+              Full-Stack Developer with experience building AI-powered web and
+              mobile applications. Skilled in React/Next.js, Node.js, Python,
+              and React Native, with a focus on creating fast, scalable, and
+              user-friendly solutions.
             </p>
             <p className="text-gray-600 leading-relaxed mt-4">
-              Passionate about delivering high-quality code and working on projects that make real impact. Always eager to learn new technologies and tackle challenging problems.
+              Passionate about delivering high-quality code and working on
+              projects that make real impact. Always eager to learn new
+              technologies and tackle challenging problems.
             </p>
           </div>
         </div>
